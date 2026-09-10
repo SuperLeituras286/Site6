@@ -1,0 +1,240 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Walli - Ebook</title>
+
+<style>
+body{
+    margin:0;
+    font-family:Arial,sans-serif;
+    background:#0d0d0d;
+    color:white;
+    text-align:center;
+}
+
+.container{
+    max-width:500px;
+    margin:auto;
+    padding:25px 18px;
+}
+
+h1{
+    font-size:32px;
+    margin-bottom:10px;
+}
+
+.subtitle{
+    color:#bbb;
+    margin-bottom:25px;
+}
+
+.card{
+    background:#181818;
+    border-radius:18px;
+    padding:25px;
+    box-shadow:0 0 20px #000;
+}
+
+.price{
+    font-size:34px;
+    font-weight:bold;
+    margin:15px 0;
+}
+
+.old-price{
+    color:#777;
+    text-decoration:line-through;
+    font-size:18px;
+}
+
+.timer{
+    font-size:24px;
+    font-weight:bold;
+    margin:20px 0;
+}
+
+input{
+    width:90%;
+    padding:14px;
+    border-radius:10px;
+    border:none;
+    margin:8px 0;
+    font-size:16px;
+}
+
+button{
+    width:95%;
+    padding:15px;
+    border:none;
+    border-radius:10px;
+    background:#fff;
+    color:#000;
+    font-size:17px;
+    font-weight:bold;
+    cursor:pointer;
+    margin-top:8px;
+}
+
+button:hover{
+    opacity:.85;
+}
+
+#mensagem{
+    margin-top:10px;
+    font-weight:bold;
+}
+
+.pix{
+    background:#222;
+    padding:15px;
+    border-radius:12px;
+    margin-top:20px;
+    word-break:break-all;
+    font-size:13px;
+}
+
+.copy{
+    margin-top:10px;
+}
+</style>
+</head>
+
+<body>
+
+<div class="container">
+
+    <h1>📖 E-book do Walli</h1>
+
+    <p class="subtitle">
+        Tenha acesso ao conteúdo completo em PDF.
+    </p>
+
+    <div class="card">
+
+        <div class="old-price">R$ 19,99</div>
+
+        <div class="price" id="preco">
+            R$ 19,99
+        </div>
+
+        <div class="timer">
+            ⏳ Oferta termina em:
+            <div id="timer">10:00</div>
+        </div>
+
+        <h3>🎟️ Tem um cupom?</h3>
+
+        <input
+            type="text"
+            id="cupom"
+            placeholder="Digite seu cupom"
+        >
+
+        <button onclick="aplicarCupom()">
+            APLICAR CUPOM
+        </button>
+
+        <div id="mensagem"></div>
+
+        <h3>💳 Pagamento via PIX</h3>
+
+        <div class="pix" id="pix">
+00020101021126330014br.gov.bcb.pix011122930600713520400005303986540518.995802BR5919DAVI L B S DA COSTA6008ITABORAI62070503***63048A04
+        </div>
+
+        <button class="copy" onclick="copiarPix()">
+            COPIAR PIX
+        </button>
+
+        <p id="copiado"></p>
+
+    </div>
+
+</div>
+
+<script>
+
+function aplicarCupom(){
+
+    const cupom =
+        document.getElementById("cupom").value
+        .trim()
+        .toUpperCase();
+
+    const preco =
+        document.getElementById("preco");
+
+    const mensagem =
+        document.getElementById("mensagem");
+
+    if(cupom === "SUPERLEITURAS5"){
+
+        preco.textContent = "R$ 18,99";
+
+        mensagem.textContent =
+            "✅ Cupom aplicado!";
+
+    }else{
+
+        preco.textContent = "R$ 19,99";
+
+        if(cupom === ""){
+            mensagem.textContent = "";
+        }else{
+            mensagem.textContent =
+                "❌ Cupom inválido.";
+        }
+    }
+}
+
+
+function copiarPix(){
+
+    const pix =
+        document.getElementById("pix")
+        .textContent
+        .trim();
+
+    navigator.clipboard.writeText(pix);
+
+    document.getElementById("copiado").textContent =
+        "✅ PIX copiado!";
+}
+
+
+// TIMER
+let tempo = 600;
+
+function atualizarTimer(){
+
+    let minutos =
+        Math.floor(tempo / 60);
+
+    let segundos =
+        tempo % 60;
+
+    segundos =
+        segundos < 10
+        ? "0" + segundos
+        : segundos;
+
+    document.getElementById("timer").textContent =
+        minutos + ":" + segundos;
+
+    if(tempo > 0){
+        tempo--;
+    }else{
+        tempo = 600;
+    }
+}
+
+atualizarTimer();
+
+setInterval(atualizarTimer,1000);
+
+</script>
+
+</body>
+</html>
