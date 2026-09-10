@@ -1,0 +1,317 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Walli e a Equipe Guardiã</title>
+
+<style>
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
+
+body{
+    font-family:Arial, sans-serif;
+    color:white;
+    background:
+    radial-gradient(circle at top,#5b21b6,#16002b 45%,#030008);
+}
+
+header{
+    text-align:center;
+    padding:50px 20px;
+    background:linear-gradient(135deg,#7c3aed,#db2777,#f97316);
+    box-shadow:0 0 45px #7c3aed;
+}
+
+header h1{
+    font-size:42px;
+    font-weight:900;
+    text-transform:uppercase;
+    text-shadow:0 5px 15px #000;
+}
+
+header p{
+    margin-top:12px;
+    font-size:18px;
+}
+
+.container{
+    max-width:1050px;
+    margin:auto;
+    padding:35px 20px;
+}
+
+.livro{
+    max-width:600px;
+    margin:auto;
+    padding:25px;
+    text-align:center;
+    border-radius:28px;
+    background:rgba(255,255,255,.08);
+    border:1px solid #ffffff25;
+    box-shadow:0 20px 50px #0008;
+    backdrop-filter:blur(10px);
+}
+
+.livro img{
+    width:100%;
+    max-width:350px;
+    border-radius:20px;
+    box-shadow:0 15px 35px #000;
+}
+
+.livro h2{
+    margin-top:22px;
+    font-size:27px;
+}
+
+.descricao{
+    margin:15px 0;
+    color:#ddd;
+    line-height:1.7;
+}
+
+.preco{
+    font-size:34px;
+    font-weight:900;
+    color:#4ade80;
+    margin:20px 0;
+}
+
+.comprar{
+    display:block;
+    text-decoration:none;
+    color:white;
+    padding:18px;
+    border-radius:16px;
+    font-size:19px;
+    font-weight:900;
+    background:linear-gradient(90deg,#7c3aed,#ec4899);
+    box-shadow:0 10px 30px #7c3aed66;
+    transition:.2s;
+}
+
+.comprar:hover{
+    transform:scale(1.04);
+}
+
+.destaques{
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
+    gap:22px;
+    margin-top:45px;
+}
+
+.quadrinho{
+    padding:30px;
+    border-radius:24px;
+    background:linear-gradient(145deg,#19102b,#321044);
+    border:1px solid #ffffff20;
+    box-shadow:0 15px 35px #0008;
+    transition:.3s;
+}
+
+.quadrinho:hover{
+    transform:translateY(-8px);
+}
+
+.icone{
+    font-size:45px;
+}
+
+.quadrinho h3{
+    font-size:23px;
+    margin:12px 0;
+}
+
+.quadrinho p{
+    color:#ddd;
+    line-height:1.75;
+}
+
+.pix{
+    margin-top:50px;
+    padding:30px 20px;
+    text-align:center;
+    border-radius:25px;
+    background:linear-gradient(135deg,#064e3b,#047857);
+    box-shadow:0 15px 40px #0008;
+}
+
+.pix h2{
+    font-size:30px;
+}
+
+.valor{
+    font-size:27px;
+    font-weight:900;
+    margin:15px;
+}
+
+.pix textarea{
+    width:100%;
+    max-width:850px;
+    height:125px;
+    margin-top:15px;
+    padding:15px;
+    border:0;
+    border-radius:12px;
+    font-size:13px;
+    resize:none;
+}
+
+.copiar{
+    margin-top:12px;
+    padding:15px 25px;
+    border:0;
+    border-radius:12px;
+    background:white;
+    color:#064e3b;
+    font-weight:900;
+    cursor:pointer;
+}
+
+.aviso{
+    margin-top:15px;
+    color:#d1fae5;
+}
+
+footer{
+    text-align:center;
+    padding:30px;
+    color:#aaa;
+}
+
+@media(max-width:600px){
+    header h1{
+        font-size:30px;
+    }
+
+    .livro img{
+        max-width:300px;
+    }
+}
+</style>
+</head>
+
+<body>
+
+<header>
+    <h1>📚 MINI LIVRARIA</h1>
+    <p>Uma aventura que você não vai querer perder!</p>
+</header>
+
+<div class="container">
+
+<section class="livro">
+
+<img src="capa-walli.png" alt="Walli e a Equipe Guardiã">
+
+<h2>Walli e a Equipe Guardiã: Uma Batalha Contra Bart</h2>
+
+<p class="descricao">
+Uma história cheia de aventura, ação e desafios.
+Walli e sua equipe precisam enfrentar Bart em uma
+batalha onde coragem, estratégia e amizade serão
+fundamentais para superar os obstáculos.
+</p>
+
+<div class="preco">R$ 19,99</div>
+
+<a href="#pix" class="comprar">
+    ⚡ COMPRAR AGORA
+</a>
+
+</section>
+
+
+<section class="destaques">
+
+<div class="quadrinho">
+    <div class="icone">⚔️</div>
+    <h3>Aventura e Ação</h3>
+    <p>
+        Prepare-se para uma aventura cheia de momentos
+        emocionantes, desafios inesperados e muita ação.
+        Cada parte da história foi criada para manter
+        sua curiosidade até o final.
+    </p>
+</div>
+
+<div class="quadrinho">
+    <div class="icone">🛡️</div>
+    <h3>Amizade e Coragem</h3>
+    <p>
+        Walli e sua equipe mostram que ninguém precisa
+        enfrentar os desafios sozinho. A união, a coragem
+        e a confiança entre os personagens fazem toda
+        diferença durante essa grande batalha.
+    </p>
+</div>
+
+<div class="quadrinho">
+    <div class="icone">🔥</div>
+    <h3>Leitura e Diversão</h3>
+    <p>
+        Uma leitura envolvente para quem gosta de histórias
+        divertidas e cheias de imaginação. Entre perigos,
+        descobertas e grandes momentos, você vai querer
+        continuar lendo para descobrir o final.
+    </p>
+</div>
+
+</section>
+
+
+<section class="pix" id="pix">
+
+<h2>💚 PAGAMENTO VIA PIX</h2>
+
+<div class="valor">R$ 19,99</div>
+
+<p>Copie o código PIX abaixo e faça o pagamento pelo seu banco:</p>
+
+<textarea id="pix" readonly>00020101021126330014br.gov.bcb.pix011122930600713520400005303986540520.005802BR5919DAVI L B S DA COSTA6008ITABORAI62070503***6304A722</textarea>
+
+<br>
+
+<button class="copiar" onclick="copiarPix()">
+    📋 COPIAR CÓDIGO PIX
+</button>
+
+<p class="aviso">
+Depois do pagamento, envie o comprovante para confirmar sua compra.
+</p>
+
+</section>
+
+</div>
+
+<footer>
+© 2026 Mini Livraria
+</footer>
+
+<script>
+function copiarPix(){
+
+    const codigo = document.getElementById("pix");
+
+    navigator.clipboard.writeText(codigo.value)
+    .then(() => {
+        alert("Código PIX copiado! ✅");
+    })
+    .catch(() => {
+        codigo.select();
+        document.execCommand("copy");
+        alert("Código PIX copiado! ✅");
+    });
+
+}
+</script>
+
+</body>
+</html>
