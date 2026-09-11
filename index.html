@@ -1,0 +1,395 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Walli | Livro Digital</title>
+
+<style>
+
+*{
+    box-sizing:border-box;
+    margin:0;
+    padding:0;
+}
+
+body{
+    font-family:Arial,Helvetica,sans-serif;
+    background:#050505;
+    color:white;
+}
+
+.container{
+    width:100%;
+    max-width:520px;
+    margin:auto;
+    padding:20px 15px 40px;
+}
+
+.top{
+    text-align:center;
+    padding:25px 10px;
+}
+
+.badge{
+    display:inline-block;
+    background:#e50914;
+    padding:8px 16px;
+    border-radius:30px;
+    font-weight:bold;
+    font-size:13px;
+    box-shadow:0 0 20px rgba(229,9,20,.5);
+}
+
+h1{
+    font-size:42px;
+    margin:18px 0 8px;
+    text-transform:uppercase;
+    letter-spacing:2px;
+}
+
+.red{
+    color:#e50914;
+}
+
+.subtitle{
+    color:#bbb;
+    font-size:16px;
+}
+
+.card{
+    background:linear-gradient(145deg,#181818,#0c0c0c);
+    border:1px solid #292929;
+    border-radius:22px;
+    padding:25px 20px;
+    box-shadow:0 0 35px rgba(229,9,20,.18);
+}
+
+.capa{
+    width:100%;
+    max-width:320px;
+    display:block;
+    margin:0 auto 25px;
+    border-radius:12px;
+    box-shadow:0 15px 40px #000;
+}
+
+.offer{
+    text-align:center;
+}
+
+.price{
+    font-size:42px;
+    font-weight:900;
+    color:#fff;
+    margin:10px 0;
+}
+
+.timer-box{
+    background:#250609;
+    border:1px solid #e50914;
+    border-radius:15px;
+    padding:15px;
+    margin:20px 0;
+    text-align:center;
+}
+
+.timer-title{
+    color:#ff6b70;
+    font-weight:bold;
+    font-size:14px;
+}
+
+#timer{
+    font-size:32px;
+    font-weight:900;
+    color:#fff;
+    margin-top:5px;
+}
+
+.buy{
+    width:100%;
+    padding:18px;
+    margin-top:10px;
+    border:none;
+    border-radius:12px;
+    background:#e50914;
+    color:#fff;
+    font-size:19px;
+    font-weight:900;
+    cursor:pointer;
+    box-shadow:0 8px 25px rgba(229,9,20,.35);
+}
+
+.buy:hover{
+    background:#ff1824;
+}
+
+.pix-area{
+    margin-top:25px;
+}
+
+.pix-title{
+    text-align:center;
+    margin-bottom:10px;
+    font-weight:bold;
+}
+
+.pix{
+    background:#080808;
+    border:1px solid #292929;
+    border-radius:12px;
+    padding:13px;
+    font-size:11px;
+    line-height:1.5;
+    word-break:break-all;
+    color:#bbb;
+}
+
+.copy{
+    width:100%;
+    padding:14px;
+    margin-top:10px;
+    border:none;
+    border-radius:10px;
+    background:#fff;
+    color:#000;
+    font-weight:bold;
+    cursor:pointer;
+}
+
+.copy:hover{
+    background:#ddd;
+}
+
+#copiado{
+    text-align:center;
+    color:#38d26b;
+    font-size:13px;
+    margin-top:10px;
+}
+
+.note{
+    text-align:center;
+    color:#777;
+    font-size:12px;
+    margin-top:15px;
+}
+
+footer{
+    text-align:center;
+    color:#555;
+    font-size:12px;
+    margin-top:25px;
+}
+
+@media(max-width:400px){
+
+    h1{
+        font-size:34px;
+    }
+
+    .price{
+        font-size:36px;
+    }
+
+}
+
+</style>
+</head>
+
+<body>
+
+<div class="container">
+
+    <div class="top">
+
+        <span class="badge">
+            🔥 OFERTA ESPECIAL
+        </span>
+
+        <h1>
+            WALLI <span class="red">BOOK</span>
+        </h1>
+
+        <p class="subtitle">
+            Adquira o livro digital do Walli.
+        </p>
+
+    </div>
+
+
+    <div class="card">
+
+        <!-- CAPA DO LIVRO -->
+
+        <img
+            src="capa.jpg"
+            class="capa"
+            alt="Capa do livro Walli"
+        >
+
+
+        <!-- PREÇO -->
+
+        <div class="offer">
+
+            <div class="price">
+                R$ 19,99
+            </div>
+
+        </div>
+
+
+        <!-- TIMER -->
+
+        <div class="timer-box">
+
+            <div class="timer-title">
+                ⏰ OFERTA DISPONÍVEL POR
+            </div>
+
+            <div id="timer">
+                24:00:00
+            </div>
+
+        </div>
+
+
+        <!-- BOTÃO -->
+
+        <button class="buy" onclick="mostrarPix()">
+            🔥 COMPRAR AGORA
+        </button>
+
+
+        <!-- PIX -->
+
+        <div class="pix-area" id="pixArea">
+
+            <div class="pix-title">
+                💚 PAGAMENTO VIA PIX
+            </div>
+
+            <div class="pix" id="pix">
+00020101021126330014br.gov.bcb.pix011122930600713520400005303986540519.995802BR5919DAVI L B S DA COSTA6008ITABORAI62070503***6304314B
+            </div>
+
+            <button class="copy" onclick="copiarPix()">
+                📋 COPIAR PIX
+            </button>
+
+            <div id="copiado"></div>
+
+        </div>
+
+
+        <div class="note">
+            Após o pagamento, envie o comprovante para receber o PDF.
+        </div>
+
+    </div>
+
+
+    <footer>
+        © 2026 Walli — Livro Digital
+    </footer>
+
+</div>
+
+
+<script>
+
+/* =========================
+   MOSTRAR PIX
+========================= */
+
+function mostrarPix(){
+
+    document.getElementById("pixArea")
+    .scrollIntoView({
+        behavior:"smooth"
+    });
+
+}
+
+
+/* =========================
+   COPIAR PIX
+========================= */
+
+function copiarPix(){
+
+    const pix =
+        document.getElementById("pix")
+        .textContent
+        .trim();
+
+    navigator.clipboard.writeText(pix)
+    .then(function(){
+
+        document.getElementById("copiado")
+        .textContent =
+        "✅ PIX copiado com sucesso!";
+
+    });
+
+}
+
+
+/* =========================
+   TIMER DE 24 HORAS
+========================= */
+
+let tempo = 24 * 60 * 60;
+
+function atualizarTimer(){
+
+    let horas =
+        Math.floor(tempo / 3600);
+
+    let minutos =
+        Math.floor((tempo % 3600) / 60);
+
+    let segundos =
+        tempo % 60;
+
+
+    horas =
+        String(horas).padStart(2,"0");
+
+    minutos =
+        String(minutos).padStart(2,"0");
+
+    segundos =
+        String(segundos).padStart(2,"0");
+
+
+    document.getElementById("timer")
+        .textContent =
+        horas + ":" +
+        minutos + ":" +
+        segundos;
+
+
+    if(tempo > 0){
+
+        tempo--;
+
+    }else{
+
+        tempo = 24 * 60 * 60;
+
+    }
+
+}
+
+atualizarTimer();
+
+setInterval(atualizarTimer,1000);
+
+</script>
+
+</body>
+</html>
